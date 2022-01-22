@@ -8,7 +8,7 @@ app.get("/", function(req, res){
 })
 
 var absolutePathAssets = __dirname + "/public";
-app.use(absolutePathAssets, express.static());
+app.use("/public", express.static(absolutePathAssets));
 
 
 
