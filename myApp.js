@@ -17,6 +17,12 @@ app.get("/json", function(req, res){
     res.json({'message': "Hello json"});
 })
 
+app.get("/now", function(req, res, next){
+    req.time = new Date().toString();
+}, function(req, res){
+    res.json({"time":req.time});
+})
+
 var absolutePathAssets = __dirname + "/public";
 app.use("/public", express.static(absolutePathAssets));
 
