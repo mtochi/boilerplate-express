@@ -29,6 +29,12 @@ app.get("/:word/echo", function(req, res){
 
 })
 
+app.route("/name").get(function(req, res){
+    res.json({"name": req.query.name})
+}).post(function(req, res){
+
+})
+
 var absolutePathAssets = __dirname + "/public";
 app.use("/public", express.static(absolutePathAssets));
 
